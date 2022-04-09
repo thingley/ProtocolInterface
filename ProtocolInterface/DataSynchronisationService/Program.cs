@@ -1,4 +1,4 @@
-using ServiceProvisionService.Data;
+using DataSynchronisationService.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 

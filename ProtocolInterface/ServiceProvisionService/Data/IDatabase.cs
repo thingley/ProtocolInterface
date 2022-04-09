@@ -5,18 +5,20 @@ namespace ServiceProvisionService.Data
 
 	public interface IDatabase
 	{
-		#region ClientGroup
+		EnvironmentInfo GetEnvironmentInfo();
 
-		IEnumerable<ClientGroup> GetClientGroups();
-		ClientGroup GetClientGroup(string identifier);
+		//#region ClientGroup
 
-		#endregion ClientGroup
+		//IEnumerable<ClientGroup> GetClientGroups();
+		//ClientGroup GetClientGroup(string identifier);
 
-		#region ServiceUser
+		//#endregion ClientGroup
 
-		IEnumerable<ServiceUser> GetServiceUsers();
-		ServiceUser GetServiceUser(string identifier);
+		//#region ServiceUser
 
-		#endregion ServiceUser
+		//IEnumerable<ServiceUser> GetServiceUsers();
+		//ServiceUser GetServiceUser(string identifier);
+
+		//#endregion ServiceUser
 	}
 }
