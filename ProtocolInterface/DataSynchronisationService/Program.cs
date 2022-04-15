@@ -20,7 +20,7 @@ builder.Services.AddSwaggerGen();
 */
 builder.Services.AddScoped<IDatabase, ContrOCCDatabase>();
 var connectionString = builder.Configuration.GetConnectionString("ContrOCC");
-builder.Services.AddTransient<IDbConnection, SqlConnection>((x) => new SqlConnection(connectionString));
+builder.Services.AddTransient<SqlConnection>((x) => new SqlConnection(connectionString));
 
 var app = builder.Build();
 

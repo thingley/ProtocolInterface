@@ -18,15 +18,18 @@ namespace ServiceProvisionService.Data
 		{
 			EnvironmentInfo? result = null;
 
-			using (IDbConnection connection = _serviceProvider.GetRequiredService<IDbConnection>())
+			using (SqlConnection connection = _serviceProvider.GetRequiredService<SqlConnection>())
 			{
-				IDbCommand command = connection.CreateCommand();
-				command.CommandType = CommandType.StoredProcedure;
-				command.CommandText = "dbo.Interface_GenericWSI_EnvironmentInfo_Select";
+				SqlCommand command = new SqlCommand()
+				{
+					Connection = connection,
+					CommandType = CommandType.StoredProcedure,
+					CommandText = "dbo.Interface_GenericWSI_EnvironmentInfo_Select",
+				};
 
 				connection.Open();
 
-				using (IDataReader dr = command.ExecuteReader())
+				using (SqlDataReader dr = command.ExecuteReader())
 				{
 					if (dr.Read())
 					{
