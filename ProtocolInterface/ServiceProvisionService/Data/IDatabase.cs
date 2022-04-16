@@ -5,6 +5,6 @@ namespace ServiceProvisionService.Data
 
 	public interface IDatabase
 	{
-		EnvironmentInfo? GetEnvironmentInfo();
+		EnvironmentInfo? GetEnvironmentInfo(out string errorString);
 	}
 }

@@ -19,19 +19,15 @@ namespace ServiceProvisionService.Controllers
 		[HttpGet]
 		public ActionResult<EnvironmentInfo> GetEnvironmentInfo()
 		{
-			try
-			{
-				EnvironmentInfo? environmentInfo = _database.GetEnvironmentInfo();
+			string errorMessage;
+			EnvironmentInfo? environmentInfo = _database.GetEnvironmentInfo(out errorMessage);
 
-				if (environmentInfo == null)
-					return NotFound();
-				else
-					return Ok(environmentInfo);
-			}
-			catch (Exception ex)
-			{
-				return BadRequest(ex.Message);
-			}				
+			if (errorMessage != string.Empty)
+				return BadRequest(errorMessage);
+			else if (environmentInfo == null)
+				return NotFound();
+			else
+				return Ok(environmentInfo);
 		}
 	}
 }
