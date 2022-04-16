@@ -19,17 +19,13 @@ namespace DataSynchronisationService.Controllers
 		[HttpGet]
 		public ActionResult<IEnumerable<ServiceType>> GetServiceTypes()
 		{
-			var serviceTypes = _database.GetServiceTypes();
-			return Ok(serviceTypes);
+			throw new NotImplementedException();
 		}
 
 		[HttpGet("{identifier}")]
 		public ActionResult<Service> GetServiceType(string identifier)
 		{
-			var serviceType = _database.GetServiceType(identifier);
-			//return NotFound();
-			//return BadRequest();
-			return Ok(serviceType);
+			throw new NotImplementedException();
 		}
 	}
 }

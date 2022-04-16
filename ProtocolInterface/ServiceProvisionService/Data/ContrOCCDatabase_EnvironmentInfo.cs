@@ -28,9 +28,9 @@ namespace ServiceProvisionService.Data
 					{
 						result = new EnvironmentInfo()
 						{
-							ServerName = (string)dr["ServerName"],
-							DatabaseName = (string)dr["DatabaseName"],
-							DatabaseVersion = (string)dr["DatabaseVersion"],
+							ServerName = DBStringToProtocolString(dr["ServerName"]),
+							DatabaseName = DBStringToProtocolString(dr["DatabaseName"]),
+							DatabaseVersion = DBStringToProtocolString(dr["DatabaseVersion"]),
 							DatabasePatchNumber = (int)dr["DatabasePatchNumber"],
 						};
 					}
@@ -42,6 +42,5 @@ namespace ServiceProvisionService.Data
 
 			return result;
 		}
-
 	}
 }

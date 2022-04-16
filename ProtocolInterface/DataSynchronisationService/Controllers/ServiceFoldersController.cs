@@ -19,17 +19,13 @@ namespace DataSynchronisationService.Controllers
 		[HttpGet]
 		public ActionResult<IEnumerable<ServiceFolder>> GetServiceFolders()
 		{
-			var serviceFolders = _database.GetServiceFolders();
-			return Ok(serviceFolders);
+			throw new NotImplementedException();
 		}
 
 		[HttpGet("{identifier}")]
 		public ActionResult<Service> GetServiceFolder(string identifier)
 		{
-			var serviceFolder = _database.GetServiceFolder(identifier);
-			//return NotFound();
-			//return BadRequest();
-			return Ok(serviceFolder);
+			throw new NotImplementedException();
 		}
 	}
 }
